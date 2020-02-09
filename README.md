@@ -1,1 +1,1 @@
-# RiyaSeleniumProject
+# Riya
