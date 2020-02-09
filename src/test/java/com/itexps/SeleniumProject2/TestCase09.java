@@ -46,13 +46,13 @@ public class TestCase09 {
         driver.get("https://www.riya.travel/");
         driver.findElement(By.xpath("//img[@alt='offer']")).click();
 
-        WebElement myelement; // declare a webelement
+       /* WebElement myelement; // declare a webelement
         JavascriptExecutor jse2 = (JavascriptExecutor) driver; // using java script executor for scrolling page
 
         myelement = driver.findElement(By.xpath("/html/body/footer/div[2]/div/div/div[4]/div/ul/li[3]/a"));
 
         // finding the element which needs to come to view
-        jse2.executeScript("arguments[0].scrollIntoView()", myelement); // scrolling to that element
+        jse2.executeScript("arguments[0].scrollIntoView()", myelement); // scrolling to that element*/
         driver.findElement(By.xpath("/html/body/footer/div[2]/div/div/div[4]/div/ul/li[3]/a")).click();
 
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());

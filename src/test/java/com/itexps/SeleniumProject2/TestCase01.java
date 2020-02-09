@@ -65,7 +65,7 @@ public class TestCase01 {
 
     @After
     public void tearDown() throws Exception {
-        driver.close();
+        //driver.close();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);

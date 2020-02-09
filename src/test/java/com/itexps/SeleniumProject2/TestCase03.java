@@ -56,7 +56,7 @@ public class TestCase03 {
 
         String s1 = driver.findElement(By.xpath("//*[@id=\"main-rowNK0\"]/div[1]/div[2]/div/div[3]/a")).getText();
         System.out.println(" Text is " + s1);
-        String substr = s1.substring(0, 8);
+        String substr = s1.substring(0, 9);
         try {
             Assert.assertEquals("BOOK NOW", substr);
         } catch (Error e) {
@@ -67,7 +67,7 @@ public class TestCase03 {
 
     @After
     public void tearDown() throws Exception {
-        driver.close();
+       driver.close();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);

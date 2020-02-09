@@ -8,7 +8,7 @@ package com.itexps.SeleniumProject2;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Assert;
+import org.junit.Assert;        
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
