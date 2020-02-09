@@ -51,10 +51,13 @@ public class TestCase03 {
         driver.findElement(By.id("ToCity0")).sendKeys("New York [NYC] - New York");
         driver.findElement(By.name("DepDate")).click();
         driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div[2]/table/tbody/tr[4]/td[3]/a")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div[1]/table/tbody/tr[4]/td[5]")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/section/form/div/div/div/ul[2]/li/div[4]/div/div/div[1]/div/button")).submit();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        String s1 = driver.findElement(By.xpath("//*[@id=\"main-rowNK0\"]/div[1]/div[2]/div/div[3]/a")).getText();
+      /*  String s1 = driver.findElement(By.xpath("//*[@id=\"main-rowNK0\"]/div[1]/div[2]/div/div[3]/a")).getText();
         System.out.println(" Text is " + s1);
         String substr = s1.substring(0, 9);
         try {
@@ -62,12 +65,20 @@ public class TestCase03 {
         } catch (Error e) {
             System.out.println(e.toString());
 
+        }*/
+         try {
+
+            assertEquals("ItineraryDetails", driver.getTitle());
+            System.out.println("details");
+
+        } catch (Error e) {
+            System.out.println(e.toString());
         }
     }
 
     @After
     public void tearDown() throws Exception {
-       driver.close();
+       //driver.close();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);

@@ -56,7 +56,7 @@ public class TestCase04 {
         driver.findElement(By.xpath("/html/body/section/form/div/div/div/ul[2]/li/div[4]/div/div/div[1]/div/button")).submit();
         Thread.sleep(5000);
 
-        String s1 = driver.findElement(By.xpath("//*[@id=\"main-rowNK0\"]/div[1]/div[2]/div/div[3]/a")).getText();
+       /* String s1 = driver.findElement(By.xpath("//*[@id=\"main-rowNK0\"]/div[1]/div[2]/div/div[3]/a")).getText();
         System.out.println(" Text is " + s1);
         String substr = s1.substring(0, 8);
         try {
@@ -64,12 +64,20 @@ public class TestCase04 {
         } catch (Error e) {
             System.out.println(e.toString());
 
+        }*/
+        try {
+
+            assertEquals("ItineraryDetails", driver.getTitle());
+            System.out.println("details");
+
+        } catch (Error e) {
+            System.out.println(e.toString());
         }
     }
 
     @After
     public void tearDown() throws Exception {
-        driver.close();
+       // driver.close();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);

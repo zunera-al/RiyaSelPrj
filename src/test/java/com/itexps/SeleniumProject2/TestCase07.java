@@ -50,10 +50,10 @@ public class TestCase07 {
         driver.findElement(By.xpath("/html/body/header/nav/div/div[2]/ul/li[5]/a[1]")).click();
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"international\"]")).click();
-        Thread.sleep(10000);
+        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id=\"myBtn\"]")).click();
 
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         String s1 = driver.findElement(By.xpath("//*[@id=\"package_overviewController\"]/div[1]/div[1]/div[1]")).getText();
         System.out.println(" Text is " + s1);
@@ -62,6 +62,7 @@ public class TestCase07 {
             Assert.assertEquals("DAZZLING DUBAI", substr);
         } catch (Error e) {
             System.out.println(e.toString());
+            Thread.sleep(10000);
 
         }
     }

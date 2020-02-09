@@ -44,14 +44,16 @@ public class TestCase06 {
         driver.findElement(By.xpath("//img[@alt='offer']")).click();
 
         driver.findElement(By.xpath("//*[@id=\"dropdown\"]/div/a")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id=\"dropdown\"]/ul/li[2]/a")).click();
         Thread.sleep(5000);
 
         driver.findElement(By.xpath("/html/body/header/nav/div/div[2]/ul/li[5]/a[1]")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.findElement(By.xpath("//*[@id=\"myBtn\"]")).click();
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         String s1 = driver.findElement(By.xpath("//*[@id=\"package_overviewController\"]/div[1]/div[1]/div[1]")).getText();
         System.out.println(" Text is " + s1);

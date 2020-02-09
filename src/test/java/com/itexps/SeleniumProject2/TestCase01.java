@@ -47,6 +47,7 @@ public class TestCase01 {
         driver.findElement(By.xpath("//img[@alt='offer']")).click();
         driver.findElement(By.xpath("/html/body/header/div[1]/div/div/div[2]/div[1]/a")).click();
         driver.findElement(By.xpath("/html/body/header/div[1]/div/div/div[2]/div[1]/div/ul/li[1]/a")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.name("UserName")).sendKeys("milup709@gmail.com");
         driver.findElement(By.name("Password")).sendKeys("Miloni1711@");
 

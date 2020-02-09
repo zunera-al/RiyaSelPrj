@@ -25,11 +25,11 @@ import org.openqa.selenium.WebDriver;
  */
 public class TestCase10 {
     
-   private WebDriver driver;
+    private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
-
+    
     @Before
     public void setUp() throws Exception {
         driver = DriverUtils.getChromeDriver();
@@ -37,17 +37,18 @@ public class TestCase10 {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
-
+    
     @Test
     public void testRiya() throws Exception {
         driver.get("https://www.riya.travel/");
         driver.findElement(By.xpath("//img[@alt='offer']")).click();
         
-        
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/footer/div[2]/div/div/div[3]/div/div/a[3]")).click();
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"form1\"]/div[3]/div[2]/a")).click();
-       driver.findElement(By.name("ctl00$ContentPlaceHolder1$ddlLocation")).sendKeys("mumbai");
-       Thread.sleep(5000);
+        driver.findElement(By.name("ctl00$ContentPlaceHolder1$ddlLocation")).sendKeys("mumbai");
+        Thread.sleep(5000);
         
         String s1 = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[3]/div[2]/div[2]/p[2]")).getText();
         System.out.println(" Text is " + s1);
@@ -58,16 +59,16 @@ public class TestCase10 {
             System.out.println(e.toString());
         }
     }
-
+    
     @After
     public void tearDown() throws Exception {
-        driver.close();
+        //driver.close();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
         }
     }
-
+    
     private boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
@@ -76,7 +77,7 @@ public class TestCase10 {
             return false;
         }
     }
-
+    
     private boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
@@ -85,7 +86,7 @@ public class TestCase10 {
             return false;
         }
     }
-
+    
     private String closeAlertAndGetItsText() {
         try {
             Alert alert = driver.switchTo().alert();
