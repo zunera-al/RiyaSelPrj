@@ -47,6 +47,7 @@ public class TestCase10 {
         driver.findElement(By.xpath("/html/body/footer/div[2]/div/div/div[3]/div/div/a[3]")).click();
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"form1\"]/div[3]/div[2]/a")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(By.name("ctl00$ContentPlaceHolder1$ddlLocation")).sendKeys("mumbai");
         Thread.sleep(5000);
         
