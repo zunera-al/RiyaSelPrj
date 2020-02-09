@@ -49,7 +49,7 @@ public class TestCase10 {
         driver.findElement(By.xpath("//*[@id=\"form1\"]/div[3]/div[2]/a")).click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(By.name("ctl00$ContentPlaceHolder1$ddlLocation")).sendKeys("mumbai");
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
         
         String s1 = driver.findElement(By.xpath("//*[@id=\"form1\"]/div[3]/div[2]/div[2]/p[2]")).getText();
         System.out.println(" Text is " + s1);
